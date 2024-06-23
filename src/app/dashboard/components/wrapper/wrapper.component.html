@@ -1,0 +1,118 @@
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav mode="side" opened="true">
+    <!-- Menu items -->
+    <mat-nav-list>
+      <!-- <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon
+          mat-list-icon
+          class="chevron-button sidenav-button"
+          [ngClass]="{ rotated: isExpanded }"
+          >chevron_right</mat-icon
+        >
+      </mat-list-item> -->
+      <mat-list-item class="my-5" (click)="isExpanded = !isExpanded">
+        <div class="logo-container mb-3">
+          <img
+            src="./../../../../assets/logo.JPG"
+            alt="Logo"
+            class="logo-img"
+            width="50px"
+          />
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>pause</mat-icon>
+        <span *ngIf="isExpanded"></span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>account_circle</mat-icon>
+        <span *ngIf="isExpanded"></span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>settings</mat-icon>
+        <span *ngIf="isExpanded"></span>
+      </mat-list-item>
+      <mat-list-item class="active-list" [routerLink]="'chats'" [routerLinkActive]="['is-active']">
+        <mat-icon mat-list-icon class="active-icon">chat</mat-icon>
+        <span *ngIf="isExpanded"></span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>send</mat-icon>
+        <span *ngIf="isExpanded"></span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>analytics</mat-icon>
+        <span *ngIf="isExpanded"></span>
+      </mat-list-item>
+      <mat-list-item class="margin-nav">
+        <mat-icon mat-list-icon>help_outline</mat-icon>
+        <span *ngIf="isExpanded"> </span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>power_settings_new</mat-icon>
+        <span *ngIf="isExpanded"></span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <div class="content">
+    <mat-toolbar
+      class="custom-toolbar nav-bg d-flex justify-content-between align-items-center px-3 py-2"
+    >
+      <!-- Left Side: Message and Buttons -->
+      <div class="d-flex align-items-center flex-wrap">
+        <span class="ms-3">
+          Activate 14-Day Free Trial to unlock all Pro features and get more
+          value
+        </span>
+        <button
+          mat-button
+          class="btn btn-outline-secondary rounded-pill ms-2 mb-2 mb-md-0"
+        >
+          Activate
+        </button>
+        <small href="#"  class="ms-3 text-primary fw-normal">View pricing</small>
+      </div>
+
+      <!-- Right Side: Progress, Company Logo, and Profile Picture -->
+      <div
+        class="d-flex align-items-center flex-wrap justify-content-md-end mt-2 mt-md-0"
+      >
+        <div class="d-flex align-items-stretch me-3 mb-2 mb-md-0">
+          <mat-progress-spinner
+            diameter="50"
+            mode="determinate"
+            value="20"
+            color="Primary"
+            class="me-5"
+          ></mat-progress-spinner>
+          <div class="text-center me-5">
+            <div>200/1000</div>
+            <div class="text-muted">Free Contact List</div>
+          </div>
+        </div>
+        <div class="position-relative me-5 mb-2 mb-md-0">
+          <img
+            src="./../../../../assets/FedEx-Logo.png"
+            alt="FedEx Logo"
+            class="company-logo"
+            style="max-width: 50px"
+          />
+          <span
+            class="badge bg-warning text-dark position-absolute top-0 start-100 translate-middle"
+            >Free</span
+          >
+        </div>
+        <img
+          src="./../../../../assets/man-1.jpg"
+          alt="Profile Picture"
+          class="profile-picture me-3"
+          style="max-width: 40px; border-radius: 50%"
+        />
+        <span class="fw-bold">James Moriaty</span>
+      </div>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>
